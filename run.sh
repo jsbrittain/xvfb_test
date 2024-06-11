@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker=docker
+docker=docker  # can be 'podman' or 'docker'
 
 mkdir -p /app/screenshots  # Create a directory to store screenshots
 
