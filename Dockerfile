@@ -1,6 +1,14 @@
-FROM ubuntu:latest
+FROM condaforge/mambaforge:24.3.0-0
 
-RUN apt-get update && apt-get install -y xvfb x11-apps imagemagick
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && \
+    apt-get install -y \
+        xvfb \
+        xdotool \
+        x11-apps \
+        imagemagick
+
+RUN conda install -y -c bioconda tracer
 
 WORKDIR /app
 COPY app /app
